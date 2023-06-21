@@ -6,9 +6,9 @@ pipeline {
         stage('Run automated tests') {
             steps {
                 echo 'Run automated tests'
-                sh 'npm i'
+                sh 'npm install'
                 sh 'npm install cypress'
-                //sh 'npm install xvfb'
+                sh 'npm install xvfb'
                 sh 'npm run cypress:open'
                 sh 'npm run cypress:run'
             }
