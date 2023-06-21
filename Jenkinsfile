@@ -13,7 +13,9 @@ pipeline {
             }
         }
         stage('JMeter test') {
-            
+            steps {
+                
+            }
         }
         stage('Perform manual testing') {
             steps {
