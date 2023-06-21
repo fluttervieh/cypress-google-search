@@ -9,8 +9,13 @@ pipeline {
         }
         stage('SonarQube analysis') {
             steps {
-                echo 'SQ'
+                script {
+                      scannerHome = tool 'sonar-scanner';
+                }
+            withSonarQubeEnv('cypress-google-search') { 
+                sh "${scannerHome}/bin/sonar-scanner"
             }
+          }
         }
         stage('JMeter test') {
             steps {
