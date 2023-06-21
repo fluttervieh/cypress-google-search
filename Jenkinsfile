@@ -1,13 +1,14 @@
 pipeline {
     agent any
     tools {nodejs "NodeJS"}
-    
+
     stages {
         stage('Run automated tests') {
             steps {
                 echo 'Run automated tests'
                 sh 'npm i'
                 sh 'npm install cypress'
+                sh 'npm install xvfb'
                 sh 'npm run cypress:open'
                 sh 'npm run cypress:run'
             }
@@ -26,7 +27,7 @@ pipeline {
             steps {
                 echo 'Perform manual testing'
                 timeout(activity: true, time: 2880) {
-                    input 'Proceed to production?'
+                    echo("timeout")
                 }
             }
         }
