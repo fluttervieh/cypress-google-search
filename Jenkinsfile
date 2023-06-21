@@ -5,6 +5,7 @@ pipeline {
         stage('Run automated tests') {
             steps {
                 echo 'Run automated tests'
+                sh npm install cypress
             }
         }
         stage('SonarQube analysis') {
