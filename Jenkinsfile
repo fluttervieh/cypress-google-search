@@ -1,10 +1,12 @@
 pipeline {
     agent any
+    tools {nodejs "NodeJS"}
 
     stages {
         stage('Run automated tests') {
             steps {
                 echo 'Run automated tests'
+                sh 'npm i'
                 sh 'npm install cypress'
                 sh 'npm run cypress:open'
                 sh 'npm run cypress:run'
