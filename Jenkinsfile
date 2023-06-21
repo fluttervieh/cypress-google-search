@@ -11,7 +11,9 @@ pipeline {
             }
         }
         stage('SonarQube analysis') {
-            
+            steps{
+                echo 'SONAR'
+            }
         }
         stage('JMeter test') {
             steps {
