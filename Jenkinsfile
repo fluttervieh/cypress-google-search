@@ -9,12 +9,12 @@ pipeline {
         }
         stage('SonarQube analysis') {
             steps {
-                
+                echo 'SQ'
             }
         }
         stage('JMeter test') {
             steps {
-                
+                echo 'JMETER'
             }
         }
         stage('Perform manual testing') {
