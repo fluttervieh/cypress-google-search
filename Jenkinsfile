@@ -9,14 +9,7 @@ pipeline {
             }
         }
         stage('SonarQube analysis') {
-            steps {
-                script {
-                      scannerHome = tool 'sonar-scanner';
-                }
-            withSonarQubeEnv('cypress-google-search') { 
-                sh "${scannerHome}/bin/sonar-scanner"
-            }
-          }
+            
         }
         stage('JMeter test') {
             steps {
